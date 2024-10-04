@@ -1,4 +1,11 @@
-
+body {
+    background: url('../img/tripBG.png');
+    background-size: cover;
+}
+nav{
+    background: url('../img/tripBG.png');
+    background-size: cover;
+}
 main{
     padding: 20px
 }
@@ -23,8 +30,14 @@ nav img{
 
 footer{
     padding: 2em 0;
+    background-color: rgb(12, 6, 165);
+    color: white !important;
 }
 
 footer img{
     height: 10em;
+}
+
+footer a {
+    text-decoration: none; 
 }
