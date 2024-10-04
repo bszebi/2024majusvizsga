@@ -18,28 +18,27 @@
 <div class="container mt-4">
     <h2 class="text-center">Csoki Lista</h2>
     
-    
     <input type="text" class="form-control" ng-model="search" placeholder="Keresés...">
     
     <div class="row mt-4">
         <div class="col-md-4 mb-3" ng-repeat="csoki in csokik | filter:search">
-            <div class="card" ng-class="{'in-stock': csoki.raktarban, 'out-of-stock': !csoki.raktarban}">
+            <div class="card" ng-class="{'in-stock': csoki.raktaron == 1, 'out-of-stock': csoki.raktaron == 0}">
                 <div class="card-body">
                     <h5 class="card-title">{{ csoki.nev }}</h5>
-                    <p class="card-text">Ára: {{ csoki.ar }} Ft</p>
-                    <p class="card-text">Raktáron: {{ csoki.raktarban ? 'Van raktáron' : 'Nincs raktáron' }}</p>
+                    <p class="card-text">Ára: {{ csoki.ara }} Ft</p>
+                    <p class="card-text">Raktáron: {{ csoki.raktaron == 1 ? 'Van raktáron' : 'Nincs raktáron' }}</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-
 <script>
     var app = angular.module('csokiApp', []);
     app.controller('CsokiController', function($scope, $http) {
         $http.get('csokik.json').then(function(response) {
             $scope.csokik = response.data;
+            console.log(response.data);
         });
     });
 </script>
