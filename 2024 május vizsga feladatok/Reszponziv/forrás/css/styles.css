@@ -30,7 +30,7 @@ nav img{
 
 footer{
     padding: 2em 0;
-    background-color: rgb(12, 6, 165);
+    background-color: lightblue;
     color: white !important;
 }
 
@@ -41,3 +41,5 @@ footer img{
 footer a {
     text-decoration: none; 
 }
+
+
